@@ -1,0 +1,25 @@
+
+
+1.
+	DBUtil.java
+	
+	
+	==============					
+	DB 패스워드 복호화기능 추가 			
+	==============
+	
+	        //복호화 추가
+			String ALGORITHM = "PBEWithMD5AndDES";
+			String KEYSTRING = "ENDERSUMS";
+			EncryptUtil enc =  new EncryptUtil();
+
+			driver = getEnv(dbname+"jdbcdriver");
+			url = getEnv(dbname+"url");
+			userid = getEnv(dbname+"jdbcuserid");
+			password = getEnv(dbname+"jdbcpassword");
+			
+			//복호화 추가
+			password =enc.getJasyptDecryptedString(ALGORITHM, KEYSTRING, password);
+						
+				
+	
